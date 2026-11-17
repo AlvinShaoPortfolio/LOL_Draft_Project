@@ -83,3 +83,4 @@ class DRAFT_STATE:
     #returns true if 20 steps is done.
     def is_done(self):
         return self.step == len(DRAFT_ORDER)
+    
