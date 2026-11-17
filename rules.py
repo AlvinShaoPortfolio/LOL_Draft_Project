@@ -37,6 +37,16 @@ for i in range(N):
         counter[i][j] = v
         counter[j][i] = -v  #mirror to bottom-left, flipped
 
+#individual strengths of champions
+strength = {c: random.gauss(0, 0.08) for c in range(N)}
+
+#adding traps so that strong characters have really bad counter matchups so greedy fails
+for r in ROLES:
+    lane = [c for c in range(N) if r in champ_roles[c]]
+    best = max(lane, key=lambda c: strength[c])
+    rival = random.choice([c for c in lane if c != best])
+    counter[rival][best] = 0.4
+    counter[best][rival] = -0.4  #mirror, flipped
 
 #so that it only runs when rules.py directly called
 if __name__ == "__main__":
