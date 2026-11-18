@@ -1,3 +1,5 @@
+#defining the strength of individual characters and teams as well as 
+#setting traps against strong individual characters to weaken greedy
 import random
 from draft import ROLES
 
