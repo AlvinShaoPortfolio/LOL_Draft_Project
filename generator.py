@@ -58,7 +58,6 @@ def save(rows, path=OUTPUT):
         writer.writeheader()
         writer.writerows(rows)
 
-
 if __name__ == "__main__":
     rows = generate()
     save(rows)
